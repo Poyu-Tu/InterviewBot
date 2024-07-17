@@ -1,0 +1,42 @@
+body {
+    background-image: url('concrete-2562843_1920.jpg');
+    background-size: cover; /* 使圖片以最佳方式填充整個背景 */
+    font-family: Arial, sans-serif;
+    margin: 60px;
+}
+
+h1 {
+    color: #2d2c2c;
+    font-size: 40px;
+    display: flex;  /* 讓表單內容水平排列顯示 */
+    justify-content: center;    /* 將內容水平居中對齊 */
+}
+
+.navigation {
+    background: rgba(255, 255, 255, 0.678);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center; /* 將子元素文本水平居中 */
+}
+
+.navigation a {
+    margin-right: 45px;
+}
+
+a {
+    color: rgb(0, 0, 133);
+    text-decoration: none;
+    font-size: 24px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    text-align: center; /* 將子元素文本水平居中 */
+    color: #000000;
+    font-size: 20px;
+    font-weight: bold;
+}

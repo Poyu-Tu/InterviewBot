@@ -1,0 +1,93 @@
+<!-- 這裡顯示註冊頁面 -->
+<!-- 部分註解參考home.html、login.html -->
+
+{% load static %}
+    <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <meta charset="UTF-8">
+                <title>Register Page</title>
+                <link rel="stylesheet" type="text/css" href="{% static 'core/register.css' %}"/>
+            </head>
+
+            <body>
+                <h2>"Register"</h2>
+
+                <div class="form-container">
+                    <form id="register-form" method="post">
+                        {% csrf_token %}
+                        
+                        <div class="form-group">
+                            <p class="label">
+                                {{form.username.label_tag}} <!-- Username: -->
+                                {{form.username}} <!-- input Username! -->
+                            </p>
+                        </div>
+
+                        <div class="help-text">
+                            {{ form.username.help_text }}
+                        </div>
+
+                        <div class="form-group">
+                            <p class="label">
+                                {{form.email.label_tag}} <!-- Email:-->
+                                {{form.email}} <!-- input Email!-->
+                            </p>
+                        </div>
+
+                        <div class="form-group">
+                            <p class="label">
+                                {{form.password1.label_tag}} <!-- Password: -->
+                                {{form.password1}} <!-- input Password1! -->
+                            </p>
+                        </div>
+
+                        <div class="help-text">
+                            {{ form.password1.help_text }}
+                        </div>
+
+                        <div class="form-group">
+                            <p class="label">
+                                {{ form.password2.label_tag }}  <!-- Password confirmation: -->
+                                {{ form.password2 }} <!-- input Password2! -->
+                            </p>
+                        </div>
+
+                        <div class="help-text">
+                            {{ form.password2.help_text }}
+                        </div>
+
+                        <button type="submit">Register</button>
+                    </form>
+                        
+                    <div class="error-message">
+
+                        {% if form.username.errors %}
+                            {{ form.username.errors }}
+                        {% endif %}
+
+                        {% if form.email.errors %}
+                            {{ form.email.errors }}
+                        {% endif %}
+
+                        {% if form.password1.errors %}
+                            {{ form.password1.errors }}
+                        {% endif %}
+
+                        {% if form.password2.errors %}
+                            {{ form.password2.errors }}
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div id="redirect-message" style="display: none;">
+                <!-- 設置了初始的display為"none"，用於在註冊成功後顯示一個提示消息。 -->
+                
+                    <p>Registration successful! Redirecting Home Page...</p>
+                </div>
+
+                <script src="{% static 'core/register.js' %}"></script>
+
+            </body>
+        </html>

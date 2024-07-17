@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="UTF-8">
+        <title>Interview Bot</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'core/interview.css' %}"/>
+    </head>
+
+    <body>
+        <h2>"Interview Bot"</h2>
+        <div id="chat-container">
+            <!-- Chat messages will be added here -->
+        </div>
+        <textarea id="user_input" placeholder="Type your question..." oninput="adjustTextAreaHeight(this)"></textarea>
+        <button onclick="submitQuestion()">Ask</button>
+        <script src="{% static 'core/interview.js' %}"></script>
+    </body>
+</html>

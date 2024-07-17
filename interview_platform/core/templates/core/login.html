@@ -1,0 +1,85 @@
+<!-- 這裡顯示登入頁面 -->
+<!-- 部分註解參考home.html -->
+
+{% load static %}
+    <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <meta charset="UTF-8">
+                <title>Login Page</title>
+                <link rel="stylesheet" type="text/css" href="{% static 'core/login.css' %}"/>
+            </head>
+
+            <body>
+                <h2>"Login"</h2>
+
+                <div class="form-container">
+                    <form id="login-form" method="post">
+                    <!-- 
+                        這是一個表單標籤，設定了POST方法提交數據，表單的ID為"login-form"。
+
+                        class tags：通常用於對一組具有相同樣式的元素進行樣式應用。它非常適合於需要對多個元素應用相同的CSS樣式。
+                        id tags：通常用於需要唯一標識的元素，如表單中的某個特定字段，或者在JavaScript中需要引用的元素。
+                    -->
+
+                        {% csrf_token %}
+                        <!-- 
+                            {% csrf_token %}：這是Django模板系統中的一個指令，用於生成CSRF令牌，保護表單免受跨站請求偽造攻擊。
+                        -->
+
+                        <div class="form-container2">
+                        <!-- 以下為手動定義Django 表單的部分，如要更快速建立，可參考 django本身自動化建立表單方法-->
+                            <p>
+                                {{form.username.label_tag}} <!-- Username: -->
+                                {{form.username}} <!-- input Username! -->
+                            </p>
+
+                            <p>
+                                {{form.password.label_tag}} <!-- Password: -->
+                                {{form.password}} <!-- input Password! -->
+                            </p>
+
+                            <!-- 在模板中顯示非字段錯誤! -->
+                            {% if form.non_field_errors %} <!-- 這個條件檢查是否存在非字段錯誤。 -->
+
+                                <div class="django-error">
+
+                                    <!-- 
+                                        對 form.non_field_errors 中的每個錯誤進行迴圈，並設為獨立的 <p> 元素。
+                                        這樣做可以允許你自由設置每個錯誤訊息的樣式，並且可以更靈活地控制它們的呈現方式。
+                                        如下
+                                    -->
+                                    {% for error in form.non_field_errors %}
+                                        <p>⚠️{{ error }}</p>  <!-- 顯示Django內建的錯誤訊息 -->
+                                    {% endfor %} <!-- 結束for迴圈 -->
+
+                                </div>
+
+                            {% endif %} <!-- 結束判別式 -->
+                        </div>   
+                        <button type="submit">Login</button>
+                    </form>
+                </div>
+
+                {% for message in messages %}
+                    <div class="error-message">
+                        <p>
+                            <strong>    <!-- 粗字體 -->
+                                {{ message.tags }}: <!-- 顯示消息標籤 -->
+                            </strong>
+                            
+                            {{ message }} <!-- 消息內容 -->
+                        </p>
+                    </div>
+                {% endfor %}               
+
+                <script src="{% static 'core/login.js' %}"></script>
+
+            </body>
+        </html>
+
+<!--
+    TODO:
+    1.新增登入成功的訊息顯示
+-->

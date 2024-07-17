@@ -1,0 +1,58 @@
+body {
+    background-image: url('paper-5985445_1920.jpg');
+    background-size: cover; /* 使圖片以最佳方式填充整個背景 */
+    font-family: Arial, sans-serif;
+    margin: 60px;
+}
+h2 {
+    color: #2d2c2c;
+    font-size: 40px;
+    display: flex;  /* 讓表單內容水平排列顯示 */
+    justify-content: center;    /* 將內容水平居中對齊 */
+}
+.form-container{
+    background: rgba(255, 255, 255, 0.678);
+    border-radius: 10px;    /* 將所有四個角都設置為 10px 的圓角 */
+    padding: 20px;  /* 兩表單中間間隔20 像素 */
+    /* 0 水平偏移量：陰影在水平方向上沒有偏移 */
+    /* 0 垂直偏移量：陰影在垂直方向上也沒有偏移 */
+    /* 10px 模糊程度：陰影的模糊範圍，陰影邊緣會以 10 像素的範圍逐漸變淡 */
+    /* rgba(0, 0, 0, 0.1) 顏色：RGB 值為 (0, 0, 0) 表示顏色為黑色，A（alpha）值為 0.1 表示 10% 的不透明度，幾乎是透明的黑色 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 500px;
+    margin: 0 auto; /* 將表單置於水平居中 */
+}
+
+.label{
+    font-size: larger;
+    font-weight: bold;
+}
+.help-text{
+    font-style: italic;
+    font-size: xx-small;
+}
+button{
+    color: #2d2c2c;
+    padding: 20px;
+    width: 20%;
+    font-weight: bold;  /* 設定字體粗細 */
+    border: none;
+    background-color: #979797;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* 這個元素將被會在網頁上佔據一整行，並且預設情況下會在前後都換行，不與其他元素並排顯示。 */
+    margin: 0 auto; /* 0：表示在元素的上方和下方都沒有外邊距 ; auto：表示在左右兩側的外邊距上自動分配相等的空間 */
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.error-message {
+    font-size: 14px;
+    color: rgb(235, 0, 0);
+    margin: 0 auto; /* 0：表示在元素的上方和下方都沒有外邊距 ; auto：表示在左右兩側的外邊距上自動分配相等的空間 */
+}
+#redirect-message {
+    text-align: center;
+    color: rgb(0, 0, 133);
+}
