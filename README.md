@@ -26,7 +26,6 @@
 ### 系統需求
 - Python 3.12
 - Django 5.0.4
-- SQL Server
 
 以下是安裝步驟：
 
