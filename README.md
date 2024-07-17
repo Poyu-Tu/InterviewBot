@@ -60,7 +60,7 @@
 
 6. 啟動開發伺服器：
    ```bash
-  python manage.py runserver
+   python manage.py runserver
    ```
 ## 使用技術
 
